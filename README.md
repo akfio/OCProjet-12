@@ -53,6 +53,7 @@ Puis créer une Database et son mot de passe : ici Epic_Events et ocp12
 
 Dans le fichier setting.py, Mettre à jour les informations de la database: 
 
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -63,6 +64,16 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+```
+Remplacer en même temps le lien du projet de sentry.io par le votre : 
+
+```python
+sentry_sdk.init(
+    "https://00f7a7abc535434493ce9c2140c89ac2@o1044651.ingest.sentry.io/6020209",
+
+    traces_sample_rate=1.0
+)
+```
 
 Vous pouvez maintenant réaliser les migrations :
 
